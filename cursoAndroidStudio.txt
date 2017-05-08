@@ -28,7 +28,9 @@ Arquivos XML na pasta /res/layout
 FrameLayout
 - Componente para ocupar a tela inteira
 -layout mais básico
-Atributos
+
+ATRIBUTOS
+
 -layout_width - largura
 -layout_height - altura "wrap_content" --> apenas o necessário , match_parent --> todo o conteúdo
 -background - cor de fundo
@@ -38,6 +40,7 @@ id="@+id/imageView" -->
 
 LinearLayout
 -segue uma lógica linear horizontal ou vertical, seguindo um atributo "orientation"
+
 ATRIBUTOS
 
 -orientation
@@ -48,8 +51,63 @@ ATRIBUTOS
 
 RelativeLayout
 - permite posicionar m componente relativo a outro (abaixo, acima ou ao lado )
+
 ATRIBUTOS
 
+CoordinatorLayout
+
+É um container - aceita vários componentes - pode coordenar vários componentes
+Faz a ancoragem de botões na tela e sobe junto com a tela .
+
+Activity
+
+Todos os atributos vistos foram em XML 
+Cada tela se chama activity
+O XML é estático e mostra ao usuário visualização
+O java controla o XML
+
+
+Slide-Ciclo de Vida da Activity
+
+As activities tem um ciclo de vida 
+
+toda activity tem que ter o create() instanciado
+
+onCreate()
+
+onStart()
+
+onResume()
+
+Activity running
+
+onPause()
+
+onStop()
+
+onDestroy()
+
+Activity shut down
+
+---------------------
+
+Intent
+
+- troca informações entre as activity
+
+usar o método
+startActivity() presente no objeto Context, ou na Activity
+
+intent intent = new Intent(this, newActivity.class);
+intent.putExtra ("curso","Android"); (chave sempre string , valor (int, float, imagem convertida para bmp)
+intent.putExtra 
+
+Quem recebe os dados faz o seguinte :
+Bundle extrar = getIntent().getExtras();
+String curso = extras.getString("curso");
+String turma = extras.getString("turma");
+
+EXEMPLO
 
 
 
@@ -58,4 +116,5 @@ ATRIBUTOS
 
 
 Obs: Deve-se pensar na parte lógica e a parte visual se usa XML
-
+ dp- densidade de pixels - tudo que é relacionado a tamanho.
+ O activity pode rodar em background
