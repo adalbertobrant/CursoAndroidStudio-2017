@@ -46,6 +46,10 @@ ATRIBUTOS
 -layout_gravity
 -layout_weight - coloca um peso (10% ou mais e ajusta a tela)
 
+RelativeLayout
+- permite posicionar m componente relativo a outro (abaixo, acima ou ao lado )
+ATRIBUTOS
+
 
 
 
