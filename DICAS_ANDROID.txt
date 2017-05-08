@@ -1,0 +1,177 @@
+DICAS ANDROID  
+
+
+---> site google maps
+https://developers.google.com/maps/documentation/android-api/lite?hl=pt-br#visao_geral_do_modo_lite
+
+---> addMarker com Icone
+mMap.addMarker(new MarkerOptions().position(latLng).title("Seu veículo está aqui!").icon(BitmapDescriptorFactory.fromResource(R.drawable.p1)));
+
+--> metodo de clique no marker
+mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=-18.9189742,-48.2597287&mode=w");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+
+                return true;
+            }
+
+        }
+        );
+
+
+---> como chamar o Chrome
+                String urlString="http://google.com";
+                Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setPackage("com.android.chrome");
+                try {
+                    view.getContext().startActivity(intent);
+                } catch (Exception ex) {
+                    // Chrome browser presumably not installed so allow user to choose instead
+                    intent.setPackage(null);
+                    view.getContext().startActivity(intent);
+                }
+
+---> Como passar um email
+                Intent i = new Intent (Intent.ACTION_SEND);
+                i.setData(Uri.parse("mailto:"));
+                String []to={"emailteste@gmail.com"};
+                i.putExtra(Intent.EXTRA_EMAIL,to);
+                i.putExtra(Intent.EXTRA_SUBJECT,"hi");
+                i.setType("message/rfc822");
+                Intent chooser = Intent.createChooser(i,"Send Email");
+                startActivity(chooser);
+
+---> COMO PASSAR DADOS DE UMA JANELA PARA OUTRA
+-Pra quem manda:
+Intent it = new Intent(this,ActSegundaTela.class);
+        it.putExtra("VALOR",edtValor.getText().toString());
+
+        startActivity(it);
+
+-Pra quem recebe
+        Bundle bundle = getIntent().getExtras();
+        if(bundle.containsKey("VALOR")){
+            String valor = bundle.getString("VALOR");
+        }
+
+--> COMO esparar uma respota após o fechamento de uma activity
+http://techne.cesar.org.br/android-activity-e-interacao-entre-activities/
+
+---> SharedPreferences
+--gravar
+ SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+ SharedPreferences.Editor editor = sharedPreferences.edit();
+ editor.putString("usuario",usuario);
+ editor.commit();
+
+-- ler
+  SharedPreferences sharedPreferences =getSharedPreferences("MyData", Context.MODE_PRIVATE);
+  String usuario = sharedPreferences.getString("usuario","");
+
+---> Salvar e recuperar imagem do banco
+http://stackoverflow.com/questions/9357668/how-to-store-image-in-sqlite-database
+
+---> habilitar scroll em TextView
+ text_saida= (TextView)findViewById(R.id.text_saida);
+ text_saida.setMovementMethod(new ScrollingMovementMethod());//para habilitar o scroll 
+
+--no xml da activity
+android:scrollbars="vertical"
+android:ellipsize="end"
+
+---> desabilitar edição do texto no EditText
+android:enabled="false"
+
+---> colocar edição no inicio do EditText
+android:gravity="top"
+
+---> como rotacionar uma imagem 
+        Matrix matrix = new Matrix();
+        mImageView.setScaleType(ImageView.ScaleType.MATRIX);   //required
+        matrix.postRotate(90, 900, 50);
+        mImageView.setImageMatrix(matrix);
+
+---> seta de voltar na toolbar
+//colocar na classe java da activity
+getSupportActionBar().setDisplayHomeAsUpEnabled(true); //para aparececer o botao de voltar
+
+//e no menu
+	    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+---> verificar se esta conectado na internet
+	private ConnectivityManager cm;
+	private boolean isConnected;
+	cm = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+	NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+	isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+---> verificar se está habilitado função de localização
+	private LocationManager lm;
+	private boolean gps_enabled;
+	lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+	gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+---> chamar tela de configurações
+	startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+
+---> chamar tela de habilitar a localização
+	startActivityForResult(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS),0);
+
+---> limitar entrada em um edittext
+android:maxLength="5"
+
+---> especificar dados de entrada em um edittext
+  android:digits="0123456789,"
+
+---> para travar a rotação da actvity na vertical 
+--colocar em cada actvity no manifest
+    android:screenOrientation="portrait" android:configChanges="orientation"
+
+---> Limitar a quantidade de linhas a serem exibidas em um TextView e colocar os …
+   android:maxLines="1"
+   android:ellipsize="end"
+
+---> ver se uma recyclerView está no topo   
+
+private void laySwipeToggle() { 
+	if (mRecyclerView.getChildCount() == 0 || mRecyclerView.getChildAt(0).getTop() == 0) {//está no topo 
+		//faça algo
+	} else { //não está no topo
+		//faça algo 
+	} 
+}
+
+---> PopupMenu
+
+    PopupMenu popup = new PopupMenu(context,holder.btnMenu);
+    popup.inflate(R.menu.menu_main);
+    popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                //handle menu1 click
+                break;
+        }
+        return false;
+    }
+    });
+    //displaying the popup
+    popup.show();
+
+
