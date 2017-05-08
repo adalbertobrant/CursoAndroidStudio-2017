@@ -25,5 +25,33 @@ LAYOUTS
 
 Arquivos XML na pasta /res/layout
 
+FrameLayout
+- Componente para ocupar a tela inteira
+-layout mais básico
+Atributos
+-layout_width - largura
+-layout_height - altura "wrap_content" --> apenas o necessário , match_parent --> todo o conteúdo
+-background - cor de fundo
+-layout_gravity - centro de gravidade
+
+id="@+id/imageView" --> 
+
+LinearLayout
+-segue uma lógica linear horizontal ou vertical, seguindo um atributo "orientation"
+ATRIBUTOS
+
+-orientation
+-layout_height
+-layout_width
+-layout_gravity
+-layout_weight - coloca um peso (10% ou mais e ajusta a tela)
+
+
+
+
+
+
+
+
 Obs: Deve-se pensar na parte lógica e a parte visual se usa XML
 
