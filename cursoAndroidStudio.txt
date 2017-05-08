@@ -6,3 +6,24 @@ Esse ano Android é  S.O mais utilizado no mundo
 
 Android 65,19%
 IOS 31,06%
+
+Salários atrativos para o desenvolvimento Android na ordem de 30 mil dolares anuais a 100 mil
+dolares
+
+
+Android Studio - IDE oficial do Android
+
+
+
+Requisitos do Sistema
+
+8GB de RAM
+
+Devem - se usar emuladores de aparelhos para o Android Studio.
+
+LAYOUTS
+
+Arquivos XML na pasta /res/layout
+
+Obs: Deve-se pensar na parte lógica e a parte visual se usa XML
+
