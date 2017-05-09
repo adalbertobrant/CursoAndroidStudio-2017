@@ -135,5 +135,13 @@ Android Manifest = configurações básicas do projeto
 	Deve conter todas as informações e configurações do app
 A orientação da tela travada implica em menos programações.
 Deve -se colocar um nome - package name convention
+Na visualização do Android Studio 
+	apertar x-1
+	fazer a visualização usando o Android
+
+Abaixo do Android kitkat a status bar é estática
+
+android.support v7 -> questões de suporte do android
+
 
 
