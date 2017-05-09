@@ -110,6 +110,17 @@ String turma = extras.getString("turma");
 EXEMPLO
 
 
+Continuação
+
+
+Gradle - Sistema de automatização de builds, assim como o Ant e Maven
+
+- Imagem circular em java - circle image view
+
+
+
+
+Criando um Virtual Device no Android Studio
 
 
 
@@ -118,3 +129,9 @@ EXEMPLO
 Obs: Deve-se pensar na parte lógica e a parte visual se usa XML
  dp- densidade de pixels - tudo que é relacionado a tamanho.
  O activity pode rodar em background
+ versões mais utilizadas do Android kit kat , marshmellow  lollipop
+Android Manifest = configurações básicas do projeto
+	AndroidManifest.xml - deve estar na raiz
+	Deve conter todas as informações e configurações do app
+A orientação da tela travada implica em menos programações.
+
