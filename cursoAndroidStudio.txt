@@ -134,4 +134,6 @@ Android Manifest = configurações básicas do projeto
 	AndroidManifest.xml - deve estar na raiz
 	Deve conter todas as informações e configurações do app
 A orientação da tela travada implica em menos programações.
+Deve -se colocar um nome - package name convention
+
 
